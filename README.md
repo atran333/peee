@@ -4,7 +4,8 @@
 # \<Project title\>
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \[Joshua Candelaria](https://github.com/jecndlria)
+ > Authors: \ 
+ >  [Joshua Candelaria](https://github.com/jecndlria)
  >  [Vinz Madrigal](https://github.com/mvinzangelo) 
  >  [Ashwin Jagadish](https://github.com/ashwinjagadish1) 
  >  [Andy Tran](https://github.com/atran333)\
