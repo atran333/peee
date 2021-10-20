@@ -1,10 +1,9 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
- > Your author list below should include links to all members GitHub (remove existing author).
+# Dungeon Crawler Working Title
  
- > Authors: 
+ Authors: 
  -  [Joshua Candelaria](https://github.com/jecndlria)
  -  [Vinz Madrigal](https://github.com/mvinzangelo) 
  -  [Ashwin Jagadish](https://github.com/ashwinjagadish1) 
