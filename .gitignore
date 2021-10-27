@@ -1,0 +1,10 @@
+CMakeFiles
+googletest
+Makefile
+CMakeCache.txt
+googletest
+test
+bin
+*cmake
+*a
+game
