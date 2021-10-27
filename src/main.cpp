@@ -1,4 +1,5 @@
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 using namespace std;
 
@@ -13,5 +14,13 @@ using namespace std;
 
 int main() {
   LOG("hello world.");
+  sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+  sf::Texture texture;
+  texture.loadFromFile("me.png");
+  sf::Sprite sprite(texture);
+  while (window.isOpen()) {
+    window.draw(sprite);
+    window.display();
+  }
   return 0;
 }
