@@ -44,7 +44,12 @@ We plan to develop a game engine from scratch using C++ and SFML graphics librar
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ 1. Make sure you have the dependencies
+ 2. Clone repository
+ 3. Run `git submodule init`
+ 4. Run `git submodule update`
+ 5. Run `cmake .` at {root}
+ 6. Run `make`
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
