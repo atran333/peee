@@ -2,6 +2,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 SET(CMAKE_CXX_STANDARD 11)
 
+PROJECT(GAMEENGINE100)
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -12,6 +14,9 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+set(BUILD_SHARED_LIBS FALSE)
+add_subdirectory(SFML)
+
 ADD_EXECUTABLE(main
 	src/main.cpp
 )
@@ -21,4 +26,4 @@ ADD_EXECUTABLE(test
 )
 
 TARGET_LINK_LIBRARIES(test gtest_main)
-
+TARGET_LINK_LIBRARIES(main sfml-graphics)
