@@ -14,8 +14,20 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-set(BUILD_SHARED_LIBS FALSE)
-add_subdirectory(SFML)
+set(SFML_VERSION "2.5.1")
+
+FetchContent_Declare(
+    sfml
+    GIT_REPOSITORY "https://github.com/SFML/SFML.git"
+    GIT_TAG        "${SFML_VERSION}"
+)
+
+FetchContent_GetProperties(sfml)
+if(NOT sfml_POPULATED)
+    FetchContent_Populate(sfml)
+    add_subdirectory(${sfml_SOURCE_DIR} ${sfml_BINARY_DIR})
+endif()
+FetchContent_MakeAvailable(sfml)
 
 ADD_EXECUTABLE(main
 	src/main.cpp
