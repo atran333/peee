@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-TEST(PerimeterTest, BigPerimeter) {
+TEST(Tests, Test0) {
     ASSERT_TRUE(true);
 }
 
