@@ -44,7 +44,7 @@ We plan to develop a game engine from scratch using C++ and SFML graphics librar
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Dependencies
-`sudo apt-get install install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
+`sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
  ## Installation/Usage
  1. Make sure you have the dependencies
  2. Clone repository
