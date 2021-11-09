@@ -8,15 +8,9 @@
  
 ## Project Description
 We plan to develop a game engine from scratch using C++ and SFML graphics library. After the game engine is done, we plan to utilize it by creating a top down roguelike roleplaying game. This project is interesting to us because instead of using existing technologies and game engines, we plan to create our own, which allows us to have a greater control over the backend of our game. We will be using Visual Studio for text editing, Git/GitHub for version control, and the SFML graphics library for sprite rendering. The input of our game will be user keystrokes, and the output will be the interactions of ingame objects with each other. Some features of our game will be procedurally generated environments and levels, a dynamic difficulty system, enemies with a slew of flavors, a story, an inventory system, and a reusable game engine. 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
- >   ![](CS100%20Final%20Project%20UML%20Class%20Diagram.png?raw=true)
+
 ## Class Diagram
- > Include a class diagram(s) for your project and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+ > ![](CS100%20Final%20Project%20UML%20Class%20Diagram.png?raw=true)
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
