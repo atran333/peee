@@ -14,6 +14,7 @@ We plan to develop a game engine from scratch using C++ and SFML graphics librar
  > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
  >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+ >   ![](CS100 Final Project UML Class Diagram.png?raw=true)
 ## Class Diagram
  > Include a class diagram(s) for your project and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
  
