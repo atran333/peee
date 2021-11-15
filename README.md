@@ -8,14 +8,16 @@
  
 ## Project Description
 We plan to develop a game engine from scratch using C++ and SFML graphics library. After the game engine is done, we plan to utilize it by creating a top down roguelike roleplaying game. This project is interesting to us because instead of using existing technologies and game engines, we plan to create our own, which allows us to have a greater control over the backend of our game. We will be using Visual Studio for text editing, Git/GitHub for version control, and the SFML graphics library for sprite rendering. The input of our game will be user keystrokes, and the output will be the interactions of ingame objects with each other. Some features of our game will be procedurally generated environments and levels, a dynamic difficulty system, enemies with a slew of flavors, a story, an inventory system, and a reusable game engine. 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+
 ## Class Diagram
- > Include a class diagram(s) for your project and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+![](CS100%20Final%20Project%20UML%20Class%20Diagram.png?raw=true)
+In our UML Class Diagram, we implemented 3 specific design patterns. We included two composite patterns (GameComponent and GuiElement). We also included one strategy pattern (GuiStyle).
+For the GameComponent part of our UML Class Diagram, Game Class acts as the context in this composite pattern. It declares our interface and default behaviors for the rest of our program. The Composite would be the GameObject Class. The GameObject Class stores children of the GameComponent class through a vector of GameComponents. It also holds various GameComponent (children) related operations including set and get accessor methods. In this pattern, the leaves would be our Graphics, Movement, Audio and Script which express behaviors and act on those operations provided by the GameComponent class. 
+
+The scene is a composition of the GUI and GameObject classes that essentially creates different scenes and gives us the ability to organize our various classes into their individual groups so that they can be shown together based on the state of our game
+
+For the GUI portion of the UML diagram, we utilized the strategy pattern by abstracting the draw pattern for the different GUI components. Depending on the strategy, the GUI components will either be shown like a menu or an in-game user interface. We use the same draw function for two different algorithms. The canvas is also a composition of different GUIElements of different varieties.
+
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
@@ -44,7 +46,7 @@ We plan to develop a game engine from scratch using C++ and SFML graphics librar
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Dependencies
-`sudo apt-get install install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
+`sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
  ## Installation/Usage
  1. Make sure you have the dependencies
  2. Clone repository
