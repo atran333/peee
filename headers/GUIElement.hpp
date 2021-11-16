@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <string.h>
-#include <vector>
 
 class GUIElement {
   public:
@@ -20,32 +19,33 @@ class GUIElement {
 class GUIText : public GUIElement {
   public:
     GUIText();
-    GUIText(sf::Vector2f position, std::string text) : GUIElement(position), message(text) {};
+    GUIText(sf::Vector2f position, std::string text);
     virtual void draw(sf::RenderWindow* target) = 0;
   private:
+    sf::Text text;
     sf::Vector2f position;
     std::string message;
 };
 
-class GUIShape : public GUIElement {
-  public:
-    GUIShape();
-    GUIShape(sf::Vector2f position) : GUIElement(position){};
-    virtual void draw(sf::RenderWindow* target) = 0;
-  private:
-    sf::Vector2f position;
-    sf::RectangleShape rect;
-};
+// class GUIShape : public GUIElement {
+//   public:
+//     GUIShape();
+//     GUIShape(sf::Vector2f position) : GUIElement(position){};
+//     virtual void draw(sf::RenderWindow* target) = 0;
+//   private:
+//     sf::Vector2f position;
+//     sf::RectangleShape rect;
+// };
 
-class GUIButton : public GUIElement {
-  public:
-    GUIButton();
-    GUIButton(sf::Vector2f position, std::string text) : GUIElement(position), message(text) {};
-    virtual void draw(sf::RenderWindow* target) = 0;
-    void clickInteration();
-  private:
-    sf::Vector2f position;
-    std::string message;
-    sf::RectangleShape rect;
-};
+// class GUIButton : public GUIElement {
+//   public:
+//     GUIButton();
+//     GUIButton(sf::Vector2f position, std::string text) : GUIElement(position), message(text) {};
+//     virtual void draw(sf::RenderWindow* target) = 0;
+//     void clickInteration();
+//   private:
+//     sf::Vector2f position;
+//     std::string message;
+//     sf::RectangleShape rect;
+// };
 #endif

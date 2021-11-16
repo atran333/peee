@@ -32,9 +32,16 @@ ADD_EXECUTABLE(main
 	src/main.cpp
 )
 
+ADD_EXECUTABLE(gui_test
+  tests/gui_test.cpp
+  src/Canvas.cpp
+  src/GUIElement.cpp
+)
+
 ADD_EXECUTABLE(test
 	src/test.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest_main)
 TARGET_LINK_LIBRARIES(main sfml-graphics)
+TARGET_LINK_LIBRARIES(gui_test sfml-graphics)

@@ -9,12 +9,13 @@
 class Canvas {
   private:
     bool visible; 
+    std::vector<GUIElement*> elements;
   public:
     Canvas();
     ~Canvas();
     void setVisible();
     void setInvisible();
-    void addElement();
+    void addElement(GUIElement* element);
     void draw(sf::RenderWindow* target);
 };
 
