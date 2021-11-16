@@ -4,10 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include <string.h>
 #include <vector>
+#include "GUIElement.hpp"
 
 class Canvas {
   private:
-    bool visible;
+    bool visible; 
   public:
     Canvas();
     ~Canvas();
