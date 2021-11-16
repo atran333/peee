@@ -1,5 +1,11 @@
 #include <iostream>
+#include "Game.h"
+
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
 
 using namespace std;
 
@@ -12,15 +18,27 @@ using namespace std;
 #endif
 
 
-int main() {
-  LOG("hello world.");
-  sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
-  sf::Texture texture;
-  texture.loadFromFile("me.png");
-  sf::Sprite sprite(texture);
-  while (window.isOpen()) {
-    window.draw(sprite);
-    window.display();
-  }
-  return 0;
+
+int main()
+{
+    //Initialize Game Engine
+    Game game;
+
+    
+    //texture.loadFromFile("me.png"); 
+    //sf::Sprite sprite(texture);
+    // Game loop
+    while (game.running())
+    {
+        // check all the window's events that were triggered since the last iteration of the loop
+        // window.draw(sprite);
+       
+        
+        //update
+        game.update();
+        //render
+        game.render();
+    }
+
+    return 0;
 }
