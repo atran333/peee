@@ -1,5 +1,5 @@
-#ifndef __GUI_H__
-#define __GUI_H__
+#ifndef __CANVAS_H__
+#define __CANVAS_H__
 
 #include <SFML/Graphics.hpp>
 #include <string.h>
