@@ -7,19 +7,15 @@ GUIText::GUIText(sf::Vector2f position, std::string fontDir, std::string text) {
   this->message = text;
   this->position = position;
   this->font = fontDir;
-  std::cout << message << std::endl;
 }
 
 void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   sf::Text txt;
-  // txt.setFont(*this->font);
-
   sf::Font font;
   if(!font.loadFromFile(this->font)) {
     return;
   }
   txt.setFont(font);
-
   txt.setString(message);
   txt.setCharacterSize(25);
   txt.setFillColor(sf::Color::White);
