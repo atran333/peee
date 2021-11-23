@@ -8,10 +8,9 @@
 
 class Canvas {
   private:
-    bool visible; 
+    bool visible = true; 
     std::vector<GUIElement*> elements;
   public:
-    Canvas();
     ~Canvas();
     void setVisible();
     void setInvisible();
