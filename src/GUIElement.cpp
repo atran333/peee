@@ -16,6 +16,7 @@ void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     return;
   }
   txt.setFont(font);
+  txt.setPosition(position);
   txt.setString(message);
   txt.setCharacterSize(25);
   txt.setFillColor(sf::Color::White);
