@@ -17,10 +17,10 @@ class GUIElement : public sf::Drawable {
 class GUIText : public GUIElement {
   public:
     GUIText();
-    GUIText(sf::Vector2f position, sf::Font font, std::string text);
+    GUIText(sf::Vector2f position, std::string fontDir, std::string text);
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
   private:
-    sf::Font *font;
+    std::string font;
     sf::Vector2f position;
     std::string message;
 };
