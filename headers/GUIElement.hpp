@@ -22,7 +22,9 @@ class GUIText : public GUIElement {
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
   private:
     std::string font;
+    sf::Font actualFont;
     sf::Vector2f position;
+    sf::Text *text;
     std::string message;
 };
 
