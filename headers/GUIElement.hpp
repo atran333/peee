@@ -10,6 +10,7 @@ class GUIElement : public sf::Drawable {
     GUIElement(sf::Vector2f position) : position(position) {};
     void setPosition(sf::Vector2f position) {this->position = position;};
     sf::Vector2f getPosition() {return this->position;}
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
   private:
     sf::Vector2f position;
 };

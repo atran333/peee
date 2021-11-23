@@ -17,11 +17,10 @@ int main() {
   Canvas test();
   sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(800, 600), "SFML window");
   Canvas canvas;
-  GUIText* text = new GUIText(sf::Vector2f(100,100), "fonts/OpenSans.ttf", "Hello world!");
+  GUIText* text = new GUIText(sf::Vector2f(100,100), "fonts/OpenSans.ttf", "It's finally working holy shit");
+  canvas.addElement(text);
   while (window->isOpen()) {
-    // canvas.draw(window);
-    window->draw(*text);
-    // window->draw(txt);
+    window->draw(canvas);
     window->display();
   }
   return 0;

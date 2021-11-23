@@ -6,14 +6,14 @@ void Canvas::addElement(GUIElement* element) {
   elements.push_back(element);
 }
 
-// void Canvas::draw(sf::RenderWindow* target) {
-//   if (!visible) {
-//     return;
-//   }
-//   for (unsigned i = 0; i < elements.size(); ++i) {
-//     elements.at(i)->draw(target);
-//   }
-// }
+void Canvas::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+  if (!visible) {
+    return;
+  }
+  for (unsigned i = 0; i < elements.size(); ++i) {
+    target.draw(*elements.at(i));
+  }
+}
 
 void Canvas::setVisible() {
   this->visible = true;
