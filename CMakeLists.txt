@@ -36,5 +36,9 @@ ADD_EXECUTABLE(test
 	src/test.cpp
 )
 
+ADD_EXECUTABLE(josh
+  tests/testenvironment.cpp
+)
+
 TARGET_LINK_LIBRARIES(test gtest_main)
 TARGET_LINK_LIBRARIES(main sfml-graphics)
