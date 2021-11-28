@@ -23,7 +23,8 @@ void Canvas::setInvisible() {
   this->visible = false;
 }
 Canvas::~Canvas() {
-  for (auto it = elements.begin(); it != elements.end(); ++it) {
-    delete *it;
+  for (unsigned i = 0; i < elements.size(); ++i) {
+    delete elements.at(i);
   }
+  elements.clear();
 }

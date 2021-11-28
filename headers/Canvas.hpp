@@ -5,11 +5,13 @@
 #include <string.h>
 #include <vector>
 #include "GUIElement.hpp"
+#include "GUIStyle.hpp"
 
 class Canvas : public sf::Drawable {
   private:
     bool visible = true; 
     std::vector<GUIElement*> elements;
+    GUIStyle *style; 
   public:
     Canvas() {};
     ~Canvas();
@@ -18,6 +20,7 @@ class Canvas : public sf::Drawable {
     void setInvisible();
     void addElement(GUIElement* element);
     void draw(sf::RenderWindow* target);
+    
 };
 
 #endif

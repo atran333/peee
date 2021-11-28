@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <string.h>
+#include "GUIStyle.hpp"
 
 class GUIElement : public sf::Drawable {
   public:
@@ -13,16 +14,17 @@ class GUIElement : public sf::Drawable {
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
   private:
     sf::Vector2f position;
+    GUIStyle* style;
+
 };
 
 class GUIText : public GUIElement {
   public:
     GUIText();
-    GUIText(sf::Vector2f position, std::string fontDir, std::string text);
+    ~GUIText();
+    GUIText(sf::Vector2f position, std::string text, GUIStyle *style);
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
   private:
-    std::string font;
-    sf::Font actualFont;
     sf::Vector2f position;
     sf::Text *text;
     std::string message;
