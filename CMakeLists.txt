@@ -42,3 +42,4 @@ ADD_EXECUTABLE(josh
 
 TARGET_LINK_LIBRARIES(test gtest_main)
 TARGET_LINK_LIBRARIES(main sfml-graphics)
+TARGET_LINK_LIBRARIES(josh sfml-graphics)
