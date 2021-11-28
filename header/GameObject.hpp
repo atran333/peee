@@ -3,8 +3,11 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <vector>
 
 class GameObject {
+    private:
+        std::vector<GameComponent*> components;
     protected:
         std::string tag = "";
         sf::Texture texture;
@@ -21,6 +24,7 @@ class GameObject {
         void setTexture(sf::Texture);
         void setPos(sf::Vector2f);
         void setName(std::string);
+        void addComponent(GameComponent*); 
         sf::Texture getTexture();
         sf::Sprite getSprite();
         sf::Vector2f getPos();

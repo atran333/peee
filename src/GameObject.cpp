@@ -36,6 +36,7 @@ void GameObject::setSprite(sf::Sprite spr) { sprite = spr; }
 void GameObject::setTexture(sf::Texture tex) { texture = tex; }
 void GameObject::setPos(sf::Vector2f vec) { pos = vec; }
 void GameObject::setName(std::string str) { tag = str; }
+void GameObject::addComponent(GameComponent* comp) { components.push_back(comp); }
 
 sf::Texture GameObject::getTexture() { return texture; }
 sf::Sprite GameObject::getSprite() { return sprite; }
