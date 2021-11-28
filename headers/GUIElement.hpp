@@ -12,18 +12,18 @@ class GUIElement : public sf::Drawable {
     void setPosition(sf::Vector2f position) {this->position = position;};
     sf::Vector2f getPosition() {return this->position;}
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
+    virtual void setStyle(GUIStyle* style) = 0;
   private:
     sf::Vector2f position;
-    GUIStyle* style;
-
 };
 
 class GUIText : public GUIElement {
   public:
     GUIText();
     ~GUIText();
-    GUIText(sf::Vector2f position, std::string text, GUIStyle *style);
+    GUIText(sf::Vector2f position, std::string text);
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    void setStyle(GUIStyle* style);
   private:
     sf::Vector2f position;
     sf::Text *text;

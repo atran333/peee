@@ -3,6 +3,7 @@
 #include "../headers/GUIElement.hpp"
 
 void Canvas::addElement(GUIElement* element) {
+  element->setStyle(this->style);
   elements.push_back(element);
 }
 
@@ -27,4 +28,5 @@ Canvas::~Canvas() {
     delete elements.at(i);
   }
   elements.clear();
+  delete style;
 }

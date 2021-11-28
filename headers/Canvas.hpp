@@ -14,13 +14,14 @@ class Canvas : public sf::Drawable {
     GUIStyle *style; 
   public:
     Canvas() {};
+    Canvas(GUIStyle* style) : style(style) {};
     ~Canvas();
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     void setVisible();
     void setInvisible();
     void addElement(GUIElement* element);
     void draw(sf::RenderWindow* target);
-    
+
 };
 
 #endif
