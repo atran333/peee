@@ -36,6 +36,7 @@ ADD_EXECUTABLE(gui_test
   tests/gui_test.cpp
   src/Canvas.cpp
   src/GUIElement.cpp
+  src/GUIStyle.cpp
 )
 
 ADD_EXECUTABLE(test
