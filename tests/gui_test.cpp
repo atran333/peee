@@ -19,9 +19,9 @@ int main() {
   GUIStyle* style = new GUIStyle();
 
   Canvas canvas(style);
-  GUIText* text1 = new GUIHeadingText(sf::Vector2f(100,100), "It's finally working holy shit");
   GUIText* text2 = new GUISubheadingText(sf::Vector2f(400,300), "Hello, World");
   GUIRect* rect1 = new GUIRect(sf::Vector2f(0,0), sf::Vector2f(100, 100));
+  GUIText* text1 = new GUIHeadingText(sf::Vector2f(0,0), "It's finally working holy shit");
   canvas.addElement(text1);
   canvas.addElement(text2);
   canvas.addElement(rect1);

@@ -12,11 +12,14 @@ struct GUIStyle {
   sf::Color primaryColor = sf::Color::Green;
   sf::Color secondaryColor = sf::Color::Blue;
   sf::Color tertiaryColor = sf::Color::Red;
-  sf::Color outlineColor = sf::Color::White;
+  sf::Color outlineColor = sf::Color::White; 
   int headerSize = 40;
   int subheadingSize = 15;
   float textOutlineSize = 0;
   float shapeOutlineSize = 0;
+  sf::Color buttonRelaxedColor = sf::Color::Red;
+  sf::Color buttonHoveredColor = sf::Color::Blue;
+  sf::Color buttonPressedColor = sf::Color::Green;
 
   // setters
   void setFont(std::string newFontDir);

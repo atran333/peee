@@ -21,7 +21,7 @@ void GUIText::setStyle(GUIStyle* style) {
   this->text->setCharacterSize(style->subheadingSize);
   this->text->setFillColor(style->primaryColor);
   this->text->setOutlineThickness(style->textOutlineSize);
-  this->text->setOutlineColor(style->tertiaryColor);
+  this->text->setOutlineColor(style->outlineColor);
 }
 
 void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -55,9 +55,9 @@ GUIRect::GUIRect(sf::Vector2f position, sf::Vector2f size) : GUIElement(position
 }
 
 void GUIRect::setStyle(GUIStyle* style) {
-  this->rect->setFillColor(style->primaryColor);
+  this->rect->setFillColor(style->secondaryColor);
   this->rect->setOutlineThickness(style->shapeOutlineSize);
-  this->rect->setOutlineColor(style->tertiaryColor);
+  this->rect->setOutlineColor(style->outlineColor);
 }
 
 void GUIRect::draw(sf::RenderTarget& target, sf::RenderStates states) const {
