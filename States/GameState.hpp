@@ -1,6 +1,7 @@
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
-#include "State.hpp"
+
+#include "../header/State.hpp"
 
 class GameState: public State{
     public:
@@ -9,7 +10,7 @@ class GameState: public State{
         //Functions
 
 
-        void updateKeybinds(const float& deltaTime);
+        void updateKeyBinds(const float& deltaTime);
         void update(const float& deltaTime);
         void endState();
         void render(sf::RenderTarget* target = nullptr);
