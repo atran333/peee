@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "Game.hpp"
+#include "../header/Game.hpp"
 
-using namespace std;
+
 //decon / construct
 Game::Game()
 {
