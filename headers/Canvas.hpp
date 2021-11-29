@@ -6,6 +6,7 @@
 #include <vector>
 #include "GUIElement.hpp"
 #include "GUIStyle.hpp"
+#include "GUIButton.hpp"
 
 class Canvas : public sf::Drawable {
   private:

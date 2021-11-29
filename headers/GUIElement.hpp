@@ -17,7 +17,7 @@ class GUIElement : public sf::Drawable {
     sf::Vector2f position;
 };
 
-class GUIText : public GUIElement {
+class GUIText : virtual public GUIElement {
   public:
     GUIText();
     ~GUIText();
@@ -46,27 +46,15 @@ class GUISubheadingText : public GUIText {
     virtual void setStyle(GUIStyle* style);
 };
 
-class GUIRect : public GUIElement {
+class GUIRect : virtual public GUIElement {
   public:
     GUIRect();
     GUIRect(sf::Vector2f position, sf::Vector2f size);
     void setStyle(GUIStyle* style);
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-  private:
+  protected:
     sf::Vector2f position;
     sf::Vector2f size;
     sf::RectangleShape* rect;
 };
-
-// class GUIButton : public GUIElement {
-//   public:
-//     GUIButton();
-//     GUIButton(sf::Vector2f position, std::string text) : GUIElement(position), message(text) {};
-//     virtual void draw(sf::RenderWindow* target) = 0;
-//     void clickInteration();
-//   private:
-//     sf::Vector2f position;
-//     std::string message;
-//     sf::RectangleShape rect;
-// };
 #endif

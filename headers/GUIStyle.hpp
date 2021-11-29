@@ -17,7 +17,7 @@ struct GUIStyle {
   int subheadingSize = 15;
   float textOutlineSize = 0;
   float shapeOutlineSize = 0;
-  sf::Color buttonRelaxedColor = sf::Color::Red;
+  sf::Color buttonNormalColor = sf::Color::Red;
   sf::Color buttonHoveredColor = sf::Color::Blue;
   sf::Color buttonPressedColor = sf::Color::Green;
 

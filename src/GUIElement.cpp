@@ -8,8 +8,9 @@ GUIText::GUIText(sf::Vector2f position, std::string message) {
   this->position = position;
   this->text = new sf::Text();
 
-  this->text->setPosition(position);
   this->text->setString(this->message);
+
+  this->text->setPosition(position);
 }
 
 GUIText::~GUIText() {
@@ -25,7 +26,7 @@ void GUIText::setStyle(GUIStyle* style) {
 }
 
 void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  target.draw(*this->text); 
+  target.draw(*this->text, states); 
 }
 
 // GUIHedingText
@@ -35,7 +36,6 @@ void GUIHeadingText::setStyle(GUIStyle* style) {
 }
 
 GUIHeadingText::~GUIHeadingText() {
-  delete text;
 }
 
 // GUISubheadingText
@@ -45,13 +45,16 @@ void GUISubheadingText::setStyle(GUIStyle* style) {
 }
 
 GUISubheadingText::~GUISubheadingText() {
-  delete text;
 }
 
 // GUIShape
 GUIRect::GUIRect(sf::Vector2f position, sf::Vector2f size) : GUIElement(position), size(size) {
-  this->rect = new sf::RectangleShape;
+  this->rect = new sf::RectangleShape();
   this->rect->setSize(this->size);
+  sf::FloatRect textRect = this->rect->getLocalBounds();
+  // this->rect->setOrigin(textRect.width/2.0f,
+  //                       textRect.height/2.0f);
+  this->rect->setPosition(position);
 }
 
 void GUIRect::setStyle(GUIStyle* style) {
@@ -61,5 +64,5 @@ void GUIRect::setStyle(GUIStyle* style) {
 }
 
 void GUIRect::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  target.draw(*this->rect);
+  target.draw(*this->rect, states);
 }
