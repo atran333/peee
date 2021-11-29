@@ -30,6 +30,9 @@ FetchContent_MakeAvailable(sfml)
 
 ADD_EXECUTABLE(main
 	src/main.cpp
+  src/Game.cpp
+  States/GameState.cpp
+  src/State.cpp
 	
 )
 
