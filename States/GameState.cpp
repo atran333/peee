@@ -1,9 +1,10 @@
 #include "GameState.hpp"
 
-GameState::GameState(sf::RenderWindow* window)
-    : State(window) // pointer to the window
+GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
+    : State(window, states) // pointer to the window
 {
-
+    this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
+    this->background.setFillColor(sf::Color::Blue);
 
 }
 GameState::~GameState()
@@ -13,25 +14,26 @@ GameState::~GameState()
 
 void GameState::update(const float& deltaTime)
 {
-    this->updateKeyBinds(deltaTime);
+    this->updateInput(deltaTime);
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
-        std::cout << "Kanye" << "/n" ;
+        std::cout << "Kanye" << std::endl; //prints kanye when in game state
     }
     
 }
 
 void GameState::render(sf::RenderTarget* target)
 {
-
+    
+    target->draw(this->background);
 }
 
-void GameState::updateKeyBinds(const float& deltaTime)
+void GameState::updateInput(const float& deltaTime)
 {
     this->checkForQuit();
 }
 
 void GameState::endState()
 {
-    std::cout << "Ending GameState!" << "/n" ;
+    std::cout << "Ending GameState!" << std::endl;
 }
