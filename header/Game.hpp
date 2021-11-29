@@ -2,6 +2,7 @@
 #define GAME_HPP
 
 #include "../States/GameState.hpp"
+#include "../States/MainMenuState.hpp"
 
 #include <iostream>
 #include <ctime>
@@ -20,7 +21,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 #include <vector> 
-
+#include <string>
 // class that acts as the game engine
 class Game
 {
@@ -39,6 +40,7 @@ class Game
      //variables
      float deltaTime;
      std::stack<State*> states;
+     std::map<std::string*, int> supportedKeys; 
      //Window
      sf::Clock deltaTimeClock;
      sf::RenderWindow* window;
@@ -48,5 +50,6 @@ class Game
      void initializeVariables();
      void initializeWindow();
      void initializeStates();
+     void initializeKeys();
 };
 #endif // GAME_HPP
