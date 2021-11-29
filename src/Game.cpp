@@ -38,7 +38,9 @@ void Game::initializeWindow()
 }
 void Game::initializeStates()
 {
-    this->states.push(new GameState(this->window));
+    // & -> address of the pointer
+    this->states.push(new MainMenuState(this->window, &this->states)); 
+
 }
 //accessor 
 void Game::run()
