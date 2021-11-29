@@ -1,4 +1,4 @@
-#include "State.hpp"
+#include "../header/State.hpp"
 #include <iostream>
 State::State(sf::RenderWindow* window)
 {
@@ -20,5 +20,8 @@ void State::checkForQuit()
     {
         this->quit = true;
     }
-
+}
+void State::updateKeyBinds(const float& deltaTime)
+{
+    
 }
