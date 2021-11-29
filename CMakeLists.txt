@@ -33,6 +33,7 @@ ADD_EXECUTABLE(main
   src/Game.cpp
   States/GameState.cpp
   src/State.cpp
+  States/MainMenuState.cpp
 	
 )
 
