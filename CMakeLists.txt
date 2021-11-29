@@ -30,6 +30,7 @@ FetchContent_MakeAvailable(sfml)
 
 ADD_EXECUTABLE(main
 	src/main.cpp
+	
 )
 
 ADD_EXECUTABLE(test
