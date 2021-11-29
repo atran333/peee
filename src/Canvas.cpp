@@ -20,6 +20,10 @@ void Canvas::setVisible() {
   this->visible = true;
 }
 
+void Canvas::setStyle(GUIStyle* style) {
+  this->style = style;
+}
+
 void Canvas::setInvisible() {
   this->visible = false;
 }

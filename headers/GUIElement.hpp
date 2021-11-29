@@ -23,22 +23,40 @@ class GUIText : public GUIElement {
     ~GUIText();
     GUIText(sf::Vector2f position, std::string text);
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-    void setStyle(GUIStyle* style);
-  private:
+    virtual void setStyle(GUIStyle* style);
+  protected:
     sf::Vector2f position;
     sf::Text *text;
     std::string message;
 };
 
-// class GUIShape : public GUIElement {
-//   public:
-//     GUIShape();
-//     GUIShape(sf::Vector2f position) : GUIElement(position){};
-//     virtual void draw(sf::RenderWindow* target) = 0;
-//   private:
-//     sf::Vector2f position;
-//     sf::RectangleShape rect;
-// };
+class GUIHeadingText : public GUIText {
+  public:
+    GUIHeadingText();
+    ~GUIHeadingText();
+    GUIHeadingText(sf::Vector2f position, std::string text) : GUIText(position, text) {};
+    virtual void setStyle(GUIStyle* style);
+};
+
+class GUISubheadingText : public GUIText {
+  public:
+    GUISubheadingText();
+    ~GUISubheadingText();
+    GUISubheadingText(sf::Vector2f position, std::string text) : GUIText(position, text) {};
+    virtual void setStyle(GUIStyle* style);
+};
+
+class GUIRect : public GUIElement {
+  public:
+    GUIRect();
+    GUIRect(sf::Vector2f position, sf::Vector2f size);
+    void setStyle(GUIStyle* style);
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+  private:
+    sf::Vector2f position;
+    sf::Vector2f size;
+    sf::RectangleShape* rect;
+};
 
 // class GUIButton : public GUIElement {
 //   public:
