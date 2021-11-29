@@ -5,12 +5,13 @@
 
 class GameState: public State{
     public:
-        GameState(sf::RenderWindow* window);
+        sf::RectangleShape background;
+        GameState(sf::RenderWindow* window, std::stack<State*>* states);
         virtual ~GameState();
         //Functions
 
 
-        void updateKeyBinds(const float& deltaTime);
+        void updateInput(const float& deltaTime);
         void update(const float& deltaTime);
         void endState();
         void render(sf::RenderTarget* target = nullptr);
