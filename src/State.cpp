@@ -1,8 +1,9 @@
 #include "../header/State.hpp"
 #include <iostream>
-State::State(sf::RenderWindow* window)
+State::State(sf::RenderWindow* window, std::stack<State*>* states)
 {
     this->window = window;
+    this->states = states;
     this->quit = false;
 }
 State::~State()
@@ -21,7 +22,7 @@ void State::checkForQuit()
         this->quit = true;
     }
 }
-void State::updateKeyBinds(const float& deltaTime)
+void State::updateInput(const float& deltaTime)
 {
     
 }
