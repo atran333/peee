@@ -34,8 +34,10 @@ class Game
      void updateSFMLEvents();
      void update();
      void render();
-     void run();
      void updateDeltaTime();
+     //accessor
+     const bool running() const;
+     
   private:
      //variables
      float deltaTime;
