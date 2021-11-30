@@ -10,8 +10,6 @@ class GameState: public State{
         GameState(sf::RenderWindow* window, std::stack<State*>* states);
         virtual ~GameState();
         //Functions
-
-
         void updateInput(const float& deltaTime);
         void update(const float& deltaTime, sf::Event* event, sf::RenderWindow* window);
         void endState();

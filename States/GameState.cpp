@@ -1,6 +1,5 @@
 #include "GameState.hpp"
 #include "MainMenuState.hpp"
-// #include "../tests/joshtestenvironment.cpp"
 GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
     : State(window, states) // pointer to the window
 {
@@ -27,10 +26,6 @@ void GameState::update(const float& deltaTime, sf::Event* event, sf::RenderWindo
 {
     /* USER DEFINED CODE */
 
-
-    // MovementTest* moveTest = new MovementTest(gme, event);
-    // gme->addComponent(moveTest);
-    // gme->getComponent(0)->updateGameComponent();
 
     window->display();
     window->clear();
