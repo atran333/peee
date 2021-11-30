@@ -18,6 +18,7 @@ struct GUIStyle {
   float textOutlineSize = 0;
   float shapeOutlineSize = 0;
   sf::Color buttonColor = sf::Color::Red;
+  sf::Color buttonTextColor = sf::Color::White;
 
   // setters
   void setFont(std::string newFontDir);

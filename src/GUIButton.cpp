@@ -24,9 +24,12 @@ void GUIButton::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
 void GUIButton::setStyle(GUIStyle* style) {
   GUIText::setStyle(style);
-  this->normalColor = style->buttonColor;
-  this->hoveredColor = style->buttonColor - sf::Color(50,50,50,0); 
-  this->clickedColor = style->buttonColor - sf::Color(120,120,120,0); 
+  this->normalButtonColor = style->buttonColor;
+  this->hoveredButtonColor = style->buttonColor - sf::Color(50,50,50,0); 
+  this->clickedButtonColor = style->buttonColor - sf::Color(120,120,120,0); 
+  this->normalTextColor = style->buttonTextColor;
+  this->hoveredTextColor = style->buttonTextColor - sf::Color(50,50,50,0); 
+  this->clickedTextColor = style->buttonTextColor - sf::Color(120,120,120,0); 
   setOrigins();
 }
   
@@ -80,15 +83,18 @@ void GUIButton::update(sf::Event* event, sf::RenderWindow* target) {
   }
   switch(this->state) {
       case State::NORMAL: {
-          rect->setFillColor(normalColor);
+          rect->setFillColor(normalButtonColor);
+          text->setFillColor(normalTextColor);
           break;
       }
       case State::HOVERED: {
-          rect->setFillColor(hoveredColor);
+          rect->setFillColor(hoveredButtonColor);
+          text->setFillColor(hoveredTextColor);
           break;
       }
       case State::CLICKED: {
-          rect->setFillColor(clickedColor);
+          rect->setFillColor(clickedButtonColor);
+          text->setFillColor(clickedTextColor);
           break;
       }
   }

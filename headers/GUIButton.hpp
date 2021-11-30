@@ -18,9 +18,12 @@ class GUIButton : public GUIText, public GUIRect {
     void setStyle(GUIStyle* style);
     virtual void update(sf::Event* event, sf::RenderWindow* target);
   private:
-    sf::Color normalColor = sf::Color::Red;
-    sf::Color hoveredColor = sf::Color::Blue;
-    sf::Color clickedColor = sf::Color::Green;
+    sf::Color normalButtonColor = sf::Color::Red;
+    sf::Color hoveredButtonColor = sf::Color::Blue;
+    sf::Color clickedButtonColor = sf::Color::Green;
+    sf::Color normalTextColor = sf::Color::Red;
+    sf::Color hoveredTextColor = sf::Color::Blue;
+    sf::Color clickedTextColor = sf::Color::Green;
     void setOrigins(); 
     State state;
 };
