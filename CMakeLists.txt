@@ -34,7 +34,10 @@ ADD_EXECUTABLE(main
   States/GameState.cpp
   src/State.cpp
   States/MainMenuState.cpp
-	
+  src/Canvas.cpp
+  src/GUIElement.cpp
+  src/GUIStyle.cpp
+  src/GUIButton.cpp
 )
 
 ADD_EXECUTABLE(gui_test
