@@ -37,9 +37,11 @@ ADD_EXECUTABLE(test
 )
 
 ADD_EXECUTABLE(josh
-  tests/testenvironment.cpp
+  tests/joshtestenvironment.cpp
+  src/GameObject.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest_main)
 TARGET_LINK_LIBRARIES(main sfml-graphics)
 TARGET_LINK_LIBRARIES(josh sfml-graphics)
+TARGET_LINK_LIBRARIES(josh sfml-audio)

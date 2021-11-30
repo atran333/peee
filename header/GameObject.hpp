@@ -26,6 +26,8 @@ class GameObject {
         void setPos(sf::Vector2f);
         void setName(std::string);
         void addComponent(GameComponent*); 
+        void removeComponent(int i); 
+        GameComponent* getComponent(int i); 
         sf::Texture getTexture();
         sf::Sprite getSprite();
         sf::Vector2f getPos();

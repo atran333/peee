@@ -1,4 +1,4 @@
-#include "GameObject.hpp"
+#include "../header/GameObject.hpp"
 
 GameObject::GameObject() :
 texture(),
@@ -37,7 +37,9 @@ void GameObject::setTexture(sf::Texture tex) { texture = tex; }
 void GameObject::setPos(sf::Vector2f vec) { pos = vec; }
 void GameObject::setName(std::string str) { tag = str; }
 void GameObject::addComponent(GameComponent* comp) { components.push_back(comp); }
+void GameObject::removeComponent(int i) { components.erase(components.begin()+i); }
 
+GameComponent* GameObject::getComponent(int i) { return components[i]; }
 sf::Texture GameObject::getTexture() { return texture; }
 sf::Sprite GameObject::getSprite() { return sprite; }
 sf::Vector2f GameObject::getPos() { return pos; }
