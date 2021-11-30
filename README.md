@@ -45,6 +45,7 @@ For the GUI portion of the UML diagram, we utilized the strategy pattern by abst
  
  ## Screenshots
  ![](unknown.png?raw=true)
+ This screenshot is output by using our Canvas class that draws the header (Boss Baby: The Game), and two GameObjects of the actual Boss Baby and the background. The Boss Baby GameObject is able to move around and make sounds, which was done by creating two GameComponents and adding them to a vector of GameComponents* within the Boss Baby GameObject
  ## Dependencies
 `sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
  ## Installation/Usage
