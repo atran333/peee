@@ -17,11 +17,13 @@ void MainMenuState::update(const float& deltaTime)
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::B))
     {
         std::cout << "Main" << std::endl;
+    
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
-        this->states->push(new GameState(this->window, this->states));
+       this->states->push(new GameState(this->window, this->states));
     }
+    
     
 }
 
