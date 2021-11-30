@@ -7,11 +7,11 @@
  -  [Andy Tran](https://github.com/atran333)
  
 ## Project Description
-We dveloped a game engine from scratch using C++ and the SFML graphics library. With this game engine, other users can utilize it by creating their own top down roguelike roleplaying game. This project is interesting to us because instead of using existing technologies and game engines, we created our own, which allows us to have a greater control over the backend of our game. We used Visual Studio for text editing, Git/GitHub for version control, and the SFML graphics library for sprite rendering. The input of our game will be user keystrokes, and the output will be the interactions of ingame objects with each other. 
+We developed a game engine from scratch using C++ and the SFML graphics library. With this game engine, other users can utilize it by creating their own top down roguelike roleplaying game. This project is interesting to us because instead of using existing technologies and game engines, we created our own, which allows us to have a greater control over the backend of our game. We used Visual Studio for text editing, Git/GitHub for version control, and the SFML graphics library for sprite rendering. The input of our game will be user keystrokes, and the output will be the interactions of ingame objects with each other. 
 
 ## Class Diagram
 ![](CS100%20Final%20Project%20UML%20Class%20Diagram.png?raw=true)
-In our UML Class Diagram, we implemented 3 specific design patterns. We included two composite patterns (GameComponent and GuiElement), and also included one strategy pattern (GuiStyle).
+In our UML Class Diagram, we implemented 2 specific design patterns. We included oen composite patterns (GuiElement) and one strategy pattern (GuiStyle).
 For the GameComponent part of our UML Class Diagram, Game Class acts as the context in this composite pattern. It declares our interface and default behaviors for the rest of our program. The Composite would be the GameObject Class. The GameObject Class stores children of the GameComponent class through a vector of GameComponents. It also holds various GameComponent (children) related operations including set and get accessor methods. By utilizing our GameComponent class, we were also able to test Movement and Audio which express behaviors and act on those operations provided by the GameComponent class. 
 
 The scene is a composition of the GUI and GameObject classes that essentially creates different scenes and gives us the ability to organize our various classes into their individual groups so that they can be shown together based on the state of our game
