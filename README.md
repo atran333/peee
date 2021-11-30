@@ -54,5 +54,5 @@ For the GUI portion of the UML diagram, we utilized the strategy pattern by abst
  6. Run `make`
  7. Run `./main` at {root}
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > Since our output is based on display, we wouldn't be able to use traditional unit testing (Google Test) on our program. Rather, we used GUI testing by creating our own individual testing environments and testing our outputs in our own SFML windows.
  
