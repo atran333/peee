@@ -44,7 +44,8 @@ For the GUI portion of the UML diagram, we utilized the strategy pattern by abst
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![](unknown.png?raw=true)
+ This screenshot is output by using our Canvas class that draws the header (Boss Baby: The Game), and two GameObjects of the actual Boss Baby and the background. The Boss Baby GameObject is able to move around and make sounds, which was done by creating two GameComponents and adding them to a vector of GameComponents* within the Boss Baby GameObject
  ## Dependencies
 `sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
  ## Installation/Usage
@@ -54,5 +55,5 @@ For the GUI portion of the UML diagram, we utilized the strategy pattern by abst
  6. Run `make`
  7. Run `./main` at {root}
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ Since our output is based on display, we wouldn't be able to use traditional unit testing (Google Test) on our program. Rather, we used GUI testing by creating our own individual testing environments and testing our outputs in our own SFML windows. The testing environments that were used can be found in the tests folder.
  
