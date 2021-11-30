@@ -1,5 +1,5 @@
 #include "GameState.hpp"
-
+#include "MainMenuState.hpp"
 GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
     : State(window, states) // pointer to the window
 {
@@ -18,6 +18,11 @@ void GameState::update(const float& deltaTime)
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
         std::cout << "Kanye" << std::endl; //prints kanye when in game state
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+    {
+        std::cout << "Main" << std::endl;
+        this->states->push(new MainMenuState(this->window, this->states));
     }
     
 }
