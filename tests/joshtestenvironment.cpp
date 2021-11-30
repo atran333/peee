@@ -21,7 +21,6 @@ class AudioTest : public GameComponent {
   public:
     virtual void updateGameComponent() {
       bruhMoment.play();
-      cout << "here" << endl;
     }
     virtual void start() {
       // note: set a parameter here, don't hard code
@@ -35,9 +34,35 @@ class MovementTest : public GameComponent {
     float speed;
   public:
     GameObject* circularReference;
-    MovementTest(GameObject* obj) : circularReference(obj) {}
+    sf::Event* eventPtr; 
+    MovementTest(GameObject* obj, sf::Event* event) : circularReference(obj), eventPtr(event) {}
     virtual void updateGameComponent() {
-      circularReference->getSpriteMutator()->rotate(45.0f);
+        sf::Vector2f left(-10.0f, 0.0f);
+        sf::Vector2f right(10.0f, 0.0f);
+        sf::Vector2f up(0.0f, 10.0f);
+        sf::Vector2f down(0.0f, -10.0f);
+        if (eventPtr->type == sf::Event::KeyPressed) {
+          if (eventPtr->key.code == sf::Keyboard::S)
+          {
+            circularReference->getPosMutator()->y += up.y;
+            circularReference->getSpriteMutator()->move(up);
+          }
+          else if (eventPtr->key.code == sf::Keyboard::W)
+          {
+            circularReference->getPosMutator()->y += down.y;
+            circularReference->getSpriteMutator()->move(down); 
+          }
+          else if (eventPtr->key.code == sf::Keyboard::D)
+          {
+            circularReference->getPosMutator()->x += right.x;
+            circularReference->getSpriteMutator()->move(right); 
+          }
+          else if (eventPtr->key.code == sf::Keyboard::A)
+          {
+            circularReference->getPosMutator()->x += left.x;
+            circularReference->getSpriteMutator()->move(left);
+          }
+        }
     }
     virtual void start() {
       
@@ -64,31 +89,29 @@ int main()
   sf::Event event; 
   AudioTest* bruhTest = new AudioTest;
   GameObject gme(texture, sprite, sf::Vector2f(1.0f, 1.0f), "");
-  MovementTest* moveTest = new MovementTest(&gme);
+  MovementTest* moveTest = new MovementTest(&gme, &event);
   gme.addComponent(bruhTest);
   gme.addComponent(moveTest);
   bruhTest->start();
   
   while (window.isOpen()) {
     while(window.pollEvent(event)) {
+    gme.getComponent(1)->updateGameComponent();
       if (event.type == sf::Event::KeyPressed) {
+        gme.getComponent(0)->updateGameComponent();
         switch(event.key.code) {
-        case(sf::Keyboard::Escape):
+        case(sf::Keyboard::Escape): {
           window.close();
           break;
-        case(sf::Keyboard::Q):
-          //gme.getComponent(0)->updateGameComponent();
-          gme.getComponent(1)->updateGameComponent();
-          break;
-        default:
+        }
+        default: {
           window.draw(gme.getSprite());
-          gme.getComponent(1)->updateGameComponent();
           window.display();
           window.clear();
         }
+      }
     }
   }
-    
 }
   return 0;
 }
