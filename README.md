@@ -43,7 +43,7 @@ We used composite and strategy pattern in our project. Since we used composite p
  This screenshot shows our GUIElements class in use, which uses strategy pattern in order to print them with different colors/fonts, and are stored using composite pattern which makes it easier to print.
  ![](code1.png?raw=true)
  ![](code2.png?raw=true)
- Easily create a GUI and instantiate GameObjects within its own separate GameState.
+ An example of how we can easily create a GUI and instantiate GameObjects within its own separate GameState.
  ## Dependencies
 `sudo apt-get install libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew1.5-dev libjpeg8-dev libsndfile1-dev libopenal-dev libudev-dev libxcursor-dev`
  ## Installation/Usage
