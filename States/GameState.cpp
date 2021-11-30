@@ -4,7 +4,7 @@ GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
     : State(window, states) // pointer to the window
 {
     this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
-    this->background.setFillColor(sf::Color::Blue);
+    this->background.setFillColor(sf::Color::Cyan);
 
 }
 GameState::~GameState()
