@@ -25,8 +25,8 @@ void GUIButton::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 void GUIButton::setStyle(GUIStyle* style) {
   GUIText::setStyle(style);
   this->normalColor = style->buttonColor;
-  this->hoveredColor = normalColor;
-  this->clickedColor = normalColor;
+  this->hoveredColor = style->hoveredColor; 
+  this->clickedColor = style->clickedColor; 
   setOrigins();
 }
   
