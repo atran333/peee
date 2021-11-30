@@ -63,7 +63,7 @@ int main()
   sf::Event event; 
   AudioTest* bruhTest = new AudioTest;
   GameObject gme(texture, sprite, sf::Vector2f(0.0f, 0.0f), "");
-  MovementTest* moveTest = new MovementTest(gme.getPos());
+  MovementTest* moveTest = new MovementTest;
   gme.addComponent(bruhTest);
   gme.addComponent(moveTest);
   bruhTest->start();
