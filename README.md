@@ -38,6 +38,8 @@ We used composite and strategy pattern in our project. Since we used composite p
  This screenshot is output by using our Canvas class that draws the header (Boss Baby: The Game), and two GameObjects of the actual Boss Baby and the background. The Boss Baby GameObject is able to move around and make sounds, which was done by creating two GameComponents and adding them to a vector of GameComponents* within the Boss Baby GameObject
  ![](lightmode.png?raw=true)
  ![](darkmode.png?raw=true)
+ 
+ 
  This screenshot shows our GUIElements class in use, which uses strategy pattern in order to print them with different colors/fonts, and are stored using composite pattern which makes it easier to print.
  ![](code1.png?raw=true)
  ![](code2.png?raw=true)
