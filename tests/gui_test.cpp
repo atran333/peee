@@ -1,6 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "../headers/Canvas.hpp"
+#include "../header/Canvas.hpp"
 
 using namespace std;
 
