@@ -23,6 +23,9 @@ void GUIText::setStyle(GUIStyle* style) {
   this->text->setFillColor(style->primaryColor);
   this->text->setOutlineThickness(style->textOutlineSize);
   this->text->setOutlineColor(style->outlineColor);
+  sf::FloatRect textRect = this->text->getLocalBounds();
+  this->text->setOrigin(textRect.left + textRect.width/2.0f,
+                        textRect.top + textRect.height/2.0f);
 }
 
 void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -52,8 +55,6 @@ GUIRect::GUIRect(sf::Vector2f position, sf::Vector2f size) : GUIElement(position
   this->rect = new sf::RectangleShape();
   this->rect->setSize(this->size);
   sf::FloatRect textRect = this->rect->getLocalBounds();
-  // this->rect->setOrigin(textRect.width/2.0f,
-  //                       textRect.height/2.0f);
   this->rect->setPosition(position);
 }
 
@@ -61,6 +62,9 @@ void GUIRect::setStyle(GUIStyle* style) {
   this->rect->setFillColor(style->secondaryColor);
   this->rect->setOutlineThickness(style->shapeOutlineSize);
   this->rect->setOutlineColor(style->outlineColor);
+  sf::FloatRect rectRect = this->rect->getLocalBounds();
+  this->rect->setOrigin(rectRect.left + rectRect.width/2.0f,
+                        rectRect.top + rectRect.height/2.0f);
 }
 
 void GUIRect::draw(sf::RenderTarget& target, sf::RenderStates states) const {
