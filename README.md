@@ -30,7 +30,7 @@ For the GUI portion of the UML diagram, we utilized the strategy pattern by abst
  >   * An updated class diagram that reflects the design patterns you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
  >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
 ## Updated UML Diagram
-
+![](updateduml.png?raw=true)
 We used composite and strategy pattern in our project. Since we used composite pattern for our GUIElement, it made it much easier to print. Each element was a composition of leaves, and it made it easier to print the elements. We were also able to very easily create different looking interfaces using it conjunction with strategy. It helped us write better code by allowing us to organize each element by a hierarchy and making our code more organized and easier to read. Strategy pattern was used for the GUI in order to be able to print GUIElements in a different way (for example, dark mode and light mode). We used it for our GameComponents and GameObjects as well. We wanted to use it because we wanted a way to easily encapsulate different functionalities for different objects, and have the ability to potentially use the same component for different objects. It helped us write better code by ensuring that we don't repeat ourselves and are able to easily add different functionalities when needed. 
 
  ## Screenshots
