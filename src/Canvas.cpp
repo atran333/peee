@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../headers/Canvas.hpp"
-#include "../headers/GUIElement.hpp"
+#include "../header/Canvas.hpp"
+#include "../header/GUIElement.hpp"
 
 void Canvas::addElement(GUIElement* element) {
   element->setStyle(this->style);

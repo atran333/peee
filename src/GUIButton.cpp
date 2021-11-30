@@ -1,4 +1,4 @@
-#include "../headers/GUIButton.hpp"
+#include "../header/GUIButton.hpp"
 #include <iostream>
 
 void GUIButton::setOrigins() {

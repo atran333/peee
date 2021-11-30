@@ -1,4 +1,4 @@
-#include "../headers/GUIStyle.hpp"
+#include "../header/GUIStyle.hpp"
 #include <iostream>
 
 GUIStyle::GUIStyle() {
