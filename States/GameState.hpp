@@ -1,6 +1,7 @@
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
 
+#include "../header/GameObject.hpp"
 #include "../header/State.hpp"
 
 class GameState: public State{
@@ -17,5 +18,8 @@ class GameState: public State{
         void render(sf::RenderTarget* target = nullptr);
     private:
         /* USER DEFINED VARIABLES */
+        GameObject* gme;
+        sf::Sprite* sprite;
+        sf::Texture* texture;
 };
 #endif //

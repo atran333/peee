@@ -1,17 +1,20 @@
 #include "GameState.hpp"
 #include "MainMenuState.hpp"
+// #include "../tests/joshtestenvironment.cpp"
 GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
     : State(window, states) // pointer to the window
 {
     this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
+
     /* USER DEFINED CODE */
-    this->background.setFillColor(sf::Color::Cyan);
+    this->background.setFillColor(sf::Color::Yellow);
 
+    texture = new sf::Texture();
+    texture->loadFromFile("tempassets/bossbaby.jpg");
+    sprite = new sf::Sprite(*texture);
+    sprite->setPosition(sf::Vector2f(20,20));
 
-
-
-
-
+    gme = new GameObject(*texture, *sprite,sf::Vector2f(window->getView().getCenter().x, window->getView().getCenter().y), "");
 
     /* USER DEFINED CODE END */
 }
@@ -25,7 +28,12 @@ void GameState::update(const float& deltaTime, sf::Event* event, sf::RenderWindo
     /* USER DEFINED CODE */
 
 
+    // MovementTest* moveTest = new MovementTest(gme, event);
+    // gme->addComponent(moveTest);
+    // gme->getComponent(0)->updateGameComponent();
 
+    window->display();
+    window->clear();
 
 
     /* USER DEFINED CODE END */
@@ -44,8 +52,8 @@ void GameState::update(const float& deltaTime, sf::Event* event, sf::RenderWindo
 
 void GameState::render(sf::RenderTarget* target)
 {
-    
     target->draw(this->background);
+    target->draw(gme->getSprite());
 }
 
 void GameState::updateInput(const float& deltaTime)
