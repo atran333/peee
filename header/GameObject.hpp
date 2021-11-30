@@ -28,9 +28,13 @@ class GameObject {
         void addComponent(GameComponent*); 
         void removeComponent(int i); 
         GameComponent* getComponent(int i); 
+        sf::Texture* getTextureMutator();
         sf::Texture getTexture();
+        sf::Sprite* getSpriteMutator();
         sf::Sprite getSprite();
+        sf::Vector2f* getPosMutator();
         sf::Vector2f getPos();
+        std::string* getNameMutator();
         std::string getName();
     friend class GameComponent;
 };

@@ -35,8 +35,9 @@ class MovementTest : public GameComponent {
     float speed;
   public:
     GameObject* circularReference;
+    MovementTest(GameObject* obj) : circularReference(obj) {}
     virtual void updateGameComponent() {
-
+      circularReference->getSpriteMutator()->rotate(45.0f);
     }
     virtual void start() {
       
@@ -56,14 +57,14 @@ class GraphicsTest : public GameComponent {
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(1980, 1080), "SFML window", sf::Style::Fullscreen);
+  sf::RenderWindow window(sf::VideoMode(1980, 1080), "SFML window");
   sf::Texture texture;
   texture.loadFromFile("tempassets/bossbaby.jpg");
   sf::Sprite sprite(texture);
   sf::Event event; 
   AudioTest* bruhTest = new AudioTest;
-  GameObject gme(texture, sprite, sf::Vector2f(0.0f, 0.0f), "");
-  MovementTest* moveTest = new MovementTest;
+  GameObject gme(texture, sprite, sf::Vector2f(1.0f, 1.0f), "");
+  MovementTest* moveTest = new MovementTest(&gme);
   gme.addComponent(bruhTest);
   gme.addComponent(moveTest);
   bruhTest->start();
@@ -76,7 +77,8 @@ int main()
           window.close();
           break;
         case(sf::Keyboard::Q):
-          gme.getComponent(0)->updateGameComponent();
+          //gme.getComponent(0)->updateGameComponent();
+          gme.getComponent(1)->updateGameComponent();
           break;
         default:
           window.draw(gme.getSprite());
