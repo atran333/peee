@@ -20,6 +20,10 @@ class AudioTest : public GameComponent {
     sf::Sound bruhMoment;
     sf::SoundBuffer bruhBuffer;
   public:
+    ~AudioTest()
+    {
+      bruhMoment.stop();
+    }
     virtual void updateGameComponent() {
       bruhMoment.play();
     }
@@ -27,6 +31,7 @@ class AudioTest : public GameComponent {
       // note: set a parameter here, don't hard code
       bruhBuffer.loadFromFile("tempassets/baby_cry.wav");
       bruhMoment.setBuffer(bruhBuffer);
+      bruhMoment.setPitch(1.5f);
     }
 };
 
@@ -92,7 +97,7 @@ int main()
   canvas.addElement(button1);
 
   sf::Texture texture;
-  texture.loadFromFile("tempassets/bossbaby.jpg");
+  texture.loadFromFile("tempassets/The-Boss-Baby-Movie-PNG.png");
   sf::Sprite sprite(texture);
 
   sf::Texture background;
@@ -121,13 +126,14 @@ int main()
 
         if (event.type == sf::Event::KeyPressed) {
 
-          gme.getComponent(0)->updateGameComponent();
-
           switch(event.key.code) {
 
           case(sf::Keyboard::Escape): {
             window.close();
             break;
+          }
+          case(sf::Keyboard::Q): {
+            gme.getComponent(0)->updateGameComponent();
           }
           default: {
             window.draw(backgroundObject.getSprite());
