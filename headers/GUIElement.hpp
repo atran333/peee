@@ -13,6 +13,7 @@ class GUIElement : public sf::Drawable {
     sf::Vector2f getPosition() {return this->position;}
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
     virtual void setStyle(GUIStyle* style) = 0;
+    virtual void update(sf::Event* event, sf::RenderWindow* target) {}
   private:
     sf::Vector2f position;
 };

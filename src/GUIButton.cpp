@@ -1,4 +1,5 @@
 #include "../headers/GUIButton.hpp"
+#include <iostream>
 
 void GUIButton::setOrigins() {
   sf::FloatRect textRect = this->text->getLocalBounds();
@@ -23,6 +24,72 @@ void GUIButton::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
 void GUIButton::setStyle(GUIStyle* style) {
   GUIText::setStyle(style);
-  this->rect->setFillColor(style->buttonNormalColor);
+  this->normalColor = style->buttonColor;
+  this->hoveredColor = normalColor;
+  this->clickedColor = normalColor;
   setOrigins();
+}
+  
+void GUIButton::update(sf::Event* event, sf::RenderWindow* target) { 
+  sf::Vector2i mousePosition = sf::Mouse::getPosition(*target);
+  bool mouseInButton =    mousePosition.x >= rect->getPosition().x - rect->getGlobalBounds().width/2
+                            && mousePosition.x <= rect->getPosition().x + rect->getGlobalBounds().width/2
+                            && mousePosition.y >= rect->getPosition().y - rect->getGlobalBounds().height/2
+                            && mousePosition.y <= rect->getPosition().y + rect->getGlobalBounds().height/2;
+  if(event->type == sf::Event::MouseMoved) {
+      if(mouseInButton) {
+          state = State::HOVERED;
+      }
+
+      else  {
+          state = State::NORMAL;
+      }
+  }
+
+  if (event->type == sf::Event::MouseButtonPressed) {
+      switch(event->mouseButton.button)  {
+      case sf::Mouse::Left: {
+          if(mouseInButton)   {
+              state = State::CLICKED;
+          }
+
+          else {
+              state = State::NORMAL;
+          }
+      }
+      break;
+      }
+  }
+
+  if (event->type == sf::Event::MouseButtonReleased) {
+      switch(event->mouseButton.button)
+      {
+        case sf::Mouse::Left:
+        {
+            if(mouseInButton)
+            {
+                state = State::HOVERED;
+            }
+
+            else
+            {
+                state = State::NORMAL;
+            }
+        }
+      }  
+  }
+  switch(this->state) {
+      case State::NORMAL: {
+          rect->setFillColor(normalColor);
+          break;
+      }
+      case State::HOVERED: {
+          rect->setFillColor(hoveredColor);
+          break;
+      }
+      case State::CLICKED: {
+          rect->setFillColor(clickedColor);
+          break;
+      }
+  }
 }

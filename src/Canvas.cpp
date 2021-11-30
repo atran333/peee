@@ -34,3 +34,9 @@ Canvas::~Canvas() {
   elements.clear();
   delete style;
 }
+
+void Canvas::update(sf::Event* event, sf::RenderWindow* target) {
+  for (unsigned i = 0; i < elements.size(); ++i) {
+    elements.at(i)->update(event, target);
+  }
+}

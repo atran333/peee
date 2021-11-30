@@ -23,7 +23,7 @@ class Canvas : public sf::Drawable {
     void addElement(GUIElement* element);
     void draw(sf::RenderWindow* target);
     void setStyle(GUIStyle* style);
-
+    void update(sf::Event* event, sf::RenderWindow*);
 };
 
 #endif

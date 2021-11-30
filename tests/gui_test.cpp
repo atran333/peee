@@ -32,10 +32,12 @@ int main() {
   // canvas.addElement(rect1);
   canvas.addElement(button1);
   canvas.addElement(button2);
+
+  sf::Event* currEvent = new sf::Event();
   while (window->isOpen()) {
+    canvas.update(currEvent, window);
     window->draw(canvas);
     window->display();
-    sf::Event* currEvent = new sf::Event();
       while (window->pollEvent(*currEvent))
       {
           // "close requested" event: we close the window

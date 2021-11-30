@@ -17,9 +17,7 @@ struct GUIStyle {
   int subheadingSize = 15;
   float textOutlineSize = 0;
   float shapeOutlineSize = 0;
-  sf::Color buttonNormalColor = sf::Color::Red;
-  sf::Color buttonHoveredColor = sf::Color::Blue;
-  sf::Color buttonPressedColor = sf::Color::Green;
+  sf::Color buttonColor = sf::Color::Cyan;
 
   // setters
   void setFont(std::string newFontDir);
