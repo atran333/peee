@@ -36,6 +36,10 @@ void Game::initializeWindow()
 
     
 }
+sf::RenderWindow* Game::getWindow()
+{
+    return this->window;
+}
 void Game::initializeStates()
 {
     // & -> address of the pointer
