@@ -1,5 +1,8 @@
 #include <iostream>
-#include <SFML/Graphics.hpp>
+#include "../header/Game.hpp"
+
+
+
 
 using namespace std;
 
@@ -12,15 +15,14 @@ using namespace std;
 #endif
 
 
-int main() {
-  LOG("hello world.");
-  sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
-  sf::Texture texture;
-  texture.loadFromFile("me.png");
-  sf::Sprite sprite(texture);
-  while (window.isOpen()) {
-    window.draw(sprite);
-    window.display();
-  }
-  return 0;
+int main() 
+{
+    Game game;
+    while(game.running())
+    {
+      game.updateDeltaTime();
+      game.update();
+      game.render();
+    }
+    return 0;
 }
