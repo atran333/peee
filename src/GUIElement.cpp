@@ -18,14 +18,11 @@ GUIText::~GUIText() {
 }
 
 void GUIText::setStyle(GUIStyle* style) {
-  this->text->setFont(style->font);
+  this->text->setFont(*style->font);
   this->text->setCharacterSize(style->subheadingSize);
   this->text->setFillColor(style->primaryColor);
   this->text->setOutlineThickness(style->textOutlineSize);
   this->text->setOutlineColor(style->outlineColor);
-  sf::FloatRect textRect = this->text->getLocalBounds();
-  this->text->setOrigin(textRect.left + textRect.width/2.0f,
-                        textRect.top + textRect.height/2.0f);
 }
 
 void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -36,6 +33,9 @@ void GUIText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 void GUIHeadingText::setStyle(GUIStyle* style) {
   GUIText::setStyle(style);
   this->text->setCharacterSize(style->headerSize);
+  sf::FloatRect textRect = this->text->getLocalBounds();
+  this->text->setOrigin(textRect.left + textRect.width/2.0f,
+                        textRect.top + textRect.height/2.0f);
 }
 
 GUIHeadingText::~GUIHeadingText() {
@@ -45,6 +45,9 @@ GUIHeadingText::~GUIHeadingText() {
 void GUISubheadingText::setStyle(GUIStyle* style) {
   GUIText::setStyle(style);
   this->text->setCharacterSize(style->subheadingSize);
+  sf::FloatRect textRect = this->text->getLocalBounds();
+  this->text->setOrigin(textRect.left + textRect.width/2.0f,
+                        textRect.top + textRect.height/2.0f);
 }
 
 GUISubheadingText::~GUISubheadingText() {

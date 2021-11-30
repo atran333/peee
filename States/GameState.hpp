@@ -16,6 +16,6 @@ class GameState: public State{
         void endState();
         void render(sf::RenderTarget* target = nullptr);
     private:
-
+        /* USER DEFINED VARIABLES */
 };
 #endif //

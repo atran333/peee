@@ -48,6 +48,22 @@ ADD_EXECUTABLE(gui_test
   src/GUIButton.cpp
 )
 
+ADD_EXECUTABLE(gui_lightmode
+  tests/gui_lightmode.cpp
+  src/Canvas.cpp
+  src/GUIElement.cpp
+  src/GUIStyle.cpp
+  src/GUIButton.cpp
+)
+
+ADD_EXECUTABLE(gui_darkmode
+  tests/gui_darkmode.cpp
+  src/Canvas.cpp
+  src/GUIElement.cpp
+  src/GUIStyle.cpp
+  src/GUIButton.cpp
+)
+
 ADD_EXECUTABLE(test
 	src/test.cpp
 )
@@ -62,3 +78,5 @@ TARGET_LINK_LIBRARIES(main sfml-graphics)
 TARGET_LINK_LIBRARIES(josh sfml-graphics)
 TARGET_LINK_LIBRARIES(josh sfml-audio)
 TARGET_LINK_LIBRARIES(gui_test sfml-graphics)
+TARGET_LINK_LIBRARIES(gui_lightmode sfml-graphics)
+TARGET_LINK_LIBRARIES(gui_darkmode sfml-graphics)

@@ -7,7 +7,7 @@
 struct GUIStyle {
   // variables
   GUIStyle();
-  sf::Font font;
+  sf::Font* font;
   std::string fontDir = "fonts/OpenSans.ttf";
   sf::Color primaryColor = sf::Color::Green;
   sf::Color secondaryColor = sf::Color::Blue;
