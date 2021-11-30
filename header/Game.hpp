@@ -37,7 +37,7 @@ class Game
      void updateDeltaTime();
      //accessor
      const bool running() const;
-     
+     sf::RenderWindow* getWindow();
   private:
      //variables
      float deltaTime;
@@ -53,5 +53,6 @@ class Game
      void initializeWindow();
      void initializeStates();
      void initializeKeys();
+     
 };
 #endif // GAME_HPP
