@@ -12,7 +12,7 @@ class GameState: public State{
 
 
         void updateInput(const float& deltaTime);
-        void update(const float& deltaTime);
+        void update(const float& deltaTime, sf::Event* event, sf::RenderWindow* window);
         void endState();
         void render(sf::RenderTarget* target = nullptr);
     private:

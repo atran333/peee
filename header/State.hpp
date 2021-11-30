@@ -35,7 +35,7 @@ class State
         virtual void endState() = 0;
         virtual void checkForQuit();
         virtual void updateInput(const float& deltaTime);
-        virtual void update(const float& deltaTime) = 0;
+        virtual void update(const float& deltaTime, sf::Event* event, sf::RenderWindow* window) = 0;
         // if nothing is given in the parameters, we'll run into the window, if u want to send a specific target, send in the parameter
         virtual void render(sf::RenderTarget* target = nullptr) = 0;
 };

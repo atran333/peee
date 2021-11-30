@@ -2,6 +2,7 @@
 #define MAINMENUSTATE_HPP
 
 #include "../States/GameState.hpp"
+#include "../header/Canvas.hpp"
 
 class MainMenuState: public State{
     public:
@@ -14,10 +15,12 @@ class MainMenuState: public State{
 
         void nextStage();
         void updateInput(const float& deltaTime);
-        void update(const float& deltaTime);
+        void update(const float& deltaTime, sf::Event* event, sf::RenderWindow* window);
         void endState();
         void render(sf::RenderTarget* target = nullptr);
     private:
+    Canvas *canvas;
+    GUIStyle *style;
 
 };
 #endif //

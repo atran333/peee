@@ -3,7 +3,7 @@
 
 #include "GUIElement.hpp"
 
-enum State {
+enum ButtonState{
   NORMAL,
   HOVERED,
   CLICKED
@@ -25,7 +25,7 @@ class GUIButton : public GUIText, public GUIRect {
     sf::Color hoveredTextColor = sf::Color::Blue;
     sf::Color clickedTextColor = sf::Color::Green;
     void setOrigins(); 
-    State state;
+    ButtonState state;
 };
 
 #endif

@@ -54,6 +54,7 @@ const bool Game::running() const
 //functions
 void Game::updateSFMLEvents()
 {
+    this->states.top()->update(this->deltaTime, &this->event, this->window);
     while (this->window->pollEvent(this->event))
         {
             switch(this->event.type) // each event is going to have a type, so its gonna switch any data that comes w that
@@ -78,7 +79,6 @@ void Game::update()
 
      if(!this->states.empty())
      {
-         this->states.top()->update(this->deltaTime);
 
          if(this->states.top()->getQuit())
          {

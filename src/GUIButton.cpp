@@ -41,11 +41,11 @@ void GUIButton::update(sf::Event* event, sf::RenderWindow* target) {
                             && mousePosition.y <= rect->getPosition().y + rect->getGlobalBounds().height/2;
   if(event->type == sf::Event::MouseMoved) {
       if(mouseInButton) {
-          state = State::HOVERED;
+          state = ButtonState::HOVERED;
       }
 
       else  {
-          state = State::NORMAL;
+          state = ButtonState::NORMAL;
       }
   }
 
@@ -53,11 +53,11 @@ void GUIButton::update(sf::Event* event, sf::RenderWindow* target) {
       switch(event->mouseButton.button)  {
       case sf::Mouse::Left: {
           if(mouseInButton)   {
-              state = State::CLICKED;
+              state = ButtonState::CLICKED;
           }
 
           else {
-              state = State::NORMAL;
+              state = ButtonState::NORMAL;
           }
       }
       break;
@@ -71,28 +71,28 @@ void GUIButton::update(sf::Event* event, sf::RenderWindow* target) {
         {
             if(mouseInButton)
             {
-                state = State::HOVERED;
+                state = ButtonState::HOVERED;
             }
 
             else
             {
-                state = State::NORMAL;
+                state = ButtonState::NORMAL;
             }
         }
       }  
   }
   switch(this->state) {
-      case State::NORMAL: {
+      case ButtonState::NORMAL: {
           rect->setFillColor(normalButtonColor);
           text->setFillColor(normalTextColor);
           break;
       }
-      case State::HOVERED: {
+      case ButtonState::HOVERED: {
           rect->setFillColor(hoveredButtonColor);
           text->setFillColor(hoveredTextColor);
           break;
       }
-      case State::CLICKED: {
+      case ButtonState::CLICKED: {
           rect->setFillColor(clickedButtonColor);
           text->setFillColor(clickedTextColor);
           break;
