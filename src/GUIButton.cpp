@@ -30,6 +30,7 @@ void GUIButton::setStyle(GUIStyle* style) {
   this->normalTextColor = style->buttonTextColor;
   this->hoveredTextColor = style->buttonTextColor - sf::Color(50,50,50,0); 
   this->clickedTextColor = style->buttonTextColor - sf::Color(120,120,120,0); 
+  this->text->setOutlineThickness(0);
   setOrigins();
 }
   

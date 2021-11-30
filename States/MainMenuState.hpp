@@ -19,8 +19,9 @@ class MainMenuState: public State{
         void endState();
         void render(sf::RenderTarget* target = nullptr);
     private:
-    Canvas *canvas;
-    GUIStyle *style;
+        /* USER DEFINED VARIABLES */
+        Canvas *canvas;
+        GUIStyle *style;
 
 };
 #endif //
