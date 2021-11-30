@@ -40,6 +40,7 @@ void Game::initializeStates()
 {
     // & -> address of the pointer
     this->states.push(new MainMenuState(this->window, &this->states)); 
+    this->states.push(new MainMenuState(this->window, &this->states)); 
 
 }
 //accessor 
