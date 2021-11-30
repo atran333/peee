@@ -7,7 +7,7 @@
  -  [Andy Tran](https://github.com/atran333)
  
 ## Project Description
-We developed a game engine from scratch using C++ and the SFML graphics library. With this game engine, other users can utilize it by creating their own top down roguelike roleplaying game. This project is interesting to us because instead of using existing technologies and game engines, we created our own, which allows us to have a greater control over the backend of our game. We used Visual Studio for text editing, Git/GitHub for version control, and the SFML graphics library for sprite rendering. The input of our game will be user keystrokes, and the output will be the interactions of ingame objects with each other. 
+We developed a 2D game engine from scratch using C++ and the SFML graphics library. With this game engine, other users can utilize it by creating their own 2D games. This project is interesting to us because instead of using existing technologies and game engines (with the exception of SFML), we created our own engine, which forces us to code and think at a much lower level and gain a better understanding of how game engines work. We used Visual Studio for text editing, Git/GitHub for version control, and the SFML graphics library for sprite rendering. To show that our game engine works, we will create game prototypes that use the features we implement. The input of our game prototypes will be user keystrokes, and the output will be the interactions of ingame objects with each other. 
 
 ## Class Diagram
 ![](CS100%20Final%20Project%20UML%20Class%20Diagram.png?raw=true)
