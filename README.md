@@ -11,7 +11,7 @@ We developed a game engine from scratch using C++ and the SFML graphics library.
 
 ## Class Diagram
 ![](CS100%20Final%20Project%20UML%20Class%20Diagram.png?raw=true)
-In our UML Class Diagram, we implemented 2 specific design patterns. We included one composite pattern (GuiElement) and one strategy pattern (GuiStyle).
+In our UML Class Diagram, we implemented 3 specific design patterns. We included one composite pattern (GuiElement) and two strategy pattern (GuiStyle adn GameComponent).
 For the GameComponent part of our UML Class Diagram, Game Class acts as the context in this composite pattern. It declares our interface and default behaviors for the rest of our program. The Composite would be the GameObject Class. The GameObject Class stores children of the GameComponent class through a vector of GameComponents. It also holds various GameComponent (children) related operations including set and get accessor methods. By utilizing our GameComponent class, we were also able to test Movement and Audio which express behaviors and act on those operations provided by the GameComponent class. 
 
 The scene is a composition of the GUI and GameObject classes that essentially creates different scenes and gives us the ability to organize our various classes into their individual groups so that they can be shown together based on the state of our game
