@@ -32,10 +32,11 @@ class AudioTest : public GameComponent {
 
 class MovementTest : public GameComponent {
   private:
-    sf::Vector2f position;
+    float speed;
   public:
+    GameObject* circularReference;
     virtual void updateGameComponent() {
-      
+
     }
     virtual void start() {
       
@@ -62,8 +63,11 @@ int main()
   sf::Event event; 
   AudioTest* bruhTest = new AudioTest;
   GameObject gme(texture, sprite, sf::Vector2f(0.0f, 0.0f), "");
+  MovementTest* moveTest = new MovementTest(gme.getPos());
   gme.addComponent(bruhTest);
+  gme.addComponent(moveTest);
   bruhTest->start();
+  
   while (window.isOpen()) {
     while(window.pollEvent(event)) {
       if (event.type == sf::Event::KeyPressed) {
@@ -76,6 +80,7 @@ int main()
           break;
         default:
           window.draw(gme.getSprite());
+          gme.getComponent(1)->updateGameComponent();
           window.display();
           window.clear();
         }

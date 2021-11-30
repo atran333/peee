@@ -32,6 +32,7 @@ class GameObject {
         sf::Sprite getSprite();
         sf::Vector2f getPos();
         std::string getName();
+    friend class GameComponent;
 };
 
 #endif /*GAMEOBJECT_HPP*/
