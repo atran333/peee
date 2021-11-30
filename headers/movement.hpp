@@ -9,8 +9,8 @@
 class movement
 {
   public:
-     ;void getPosition();
-     ;void setPosition();
+     //void getPosition();
+     //void setPosition();
      int update();
 };
 #endif
