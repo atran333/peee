@@ -18,6 +18,11 @@ using namespace std;
 int main() 
 {
     Game game;
-    game.run();
+    while(game.running())
+    {
+      game.updateDeltaTime();
+      game.update();
+      game.render();
+    }
     return 0;
 }
