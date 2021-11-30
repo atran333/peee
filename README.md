@@ -54,5 +54,5 @@ For the GUI portion of the UML diagram, we utilized the strategy pattern by abst
  6. Run `make`
  7. Run `./main` at {root}
  ## Testing
- Since our output is based on display, we wouldn't be able to use traditional unit testing (Google Test) on our program. Rather, we used GUI testing by creating our own individual testing environments and testing our outputs in our own SFML windows.
+ Since our output is based on display, we wouldn't be able to use traditional unit testing (Google Test) on our program. Rather, we used GUI testing by creating our own individual testing environments and testing our outputs in our own SFML windows. The testing environments that were used can be found in the tests folder.
  
