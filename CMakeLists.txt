@@ -55,6 +55,11 @@ ADD_EXECUTABLE(test
 ADD_EXECUTABLE(josh
   tests/joshtestenvironment.cpp
   src/GameObject.cpp
+  
+  src/Canvas.cpp
+  src/GUIElement.cpp
+  src/GUIStyle.cpp
+  src/GUIButton.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest_main)

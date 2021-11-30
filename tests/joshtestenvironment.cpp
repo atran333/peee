@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <math.h>
+#include "../header/Canvas.hpp"
 #include "../header/GameObject.hpp"
 using namespace std;
 
@@ -19,6 +20,10 @@ class AudioTest : public GameComponent {
     sf::Sound bruhMoment;
     sf::SoundBuffer bruhBuffer;
   public:
+    ~AudioTest()
+    {
+      bruhMoment.stop();
+    }
     virtual void updateGameComponent() {
       bruhMoment.play();
     }
@@ -26,6 +31,7 @@ class AudioTest : public GameComponent {
       // note: set a parameter here, don't hard code
       bruhBuffer.loadFromFile("tempassets/baby_cry.wav");
       bruhMoment.setBuffer(bruhBuffer);
+      bruhMoment.setPitch(1.5f);
     }
 };
 
@@ -83,41 +89,62 @@ class GraphicsTest : public GameComponent {
 int main()
 {
   sf::RenderWindow window(sf::VideoMode(1980, 1080), "SFML window");
+
+  GUIStyle* guiStyle = new GUIStyle();
+  Canvas canvas(guiStyle);
+
+  GUIElement* button1 = new GUIHeadingText(sf::Vector2f(window.getView().getCenter().x - 200.0f, 0.0f), "Boss Baby: The Game");
+  canvas.addElement(button1);
+
   sf::Texture texture;
-  texture.loadFromFile("tempassets/bossbaby.jpg");
+  texture.loadFromFile("tempassets/The-Boss-Baby-Movie-PNG.png");
   sf::Sprite sprite(texture);
+
   sf::Texture background;
   background.loadFromFile("tempassets/blue.jpg");
   sf::Sprite bgSprite(background);
+
   sf::Event event; 
+
   AudioTest* bruhTest = new AudioTest;
+
   GameObject gme(texture, sprite, sf::Vector2f(1.0f, 1.0f), "");
   GameObject backgroundObject(background, bgSprite, sf::Vector2f(0.0f, 0.0f), "");
   
   MovementTest* moveTest = new MovementTest(&gme, &event);
+
   gme.addComponent(bruhTest);
   gme.addComponent(moveTest);
+
   bruhTest->start();
   
   while (window.isOpen()) {
-    while(window.pollEvent(event)) {
-    gme.getComponent(1)->updateGameComponent();
-      if (event.type == sf::Event::KeyPressed) {
-        gme.getComponent(0)->updateGameComponent();
-        switch(event.key.code) {
-        case(sf::Keyboard::Escape): {
-          window.close();
-          break;
-        }
-        default: {
-          window.draw(backgroundObject.getSprite());
-          window.draw(gme.getSprite());
-          window.display();
-          window.clear();
+
+      while(window.pollEvent(event)) {
+
+      gme.getComponent(1)->updateGameComponent();
+
+        if (event.type == sf::Event::KeyPressed) {
+
+          switch(event.key.code) {
+
+          case(sf::Keyboard::Escape): {
+            window.close();
+            break;
+          }
+          case(sf::Keyboard::Q): {
+            gme.getComponent(0)->updateGameComponent();
+          }
+          default: {
+            window.draw(backgroundObject.getSprite());
+            window.draw(gme.getSprite());
+            window.draw(canvas);
+            window.display();
+            window.clear();
+          }
         }
       }
     }
   }
-}
   return 0;
 }
