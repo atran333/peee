@@ -40,18 +40,12 @@ void Game::initializeStates()
 {
     // & -> address of the pointer
     this->states.push(new MainMenuState(this->window, &this->states)); 
-    this->states.push(new MainMenuState(this->window, &this->states)); 
 
 }
 //accessor 
-void Game::run()
+const bool Game::running() const
 {
-    while(this->window->isOpen())
-    {
-        this->updateDeltaTime();
-        this->update();
-        this->render();
-    }
+    return this->window->isOpen();
 }
 //functions
 void Game::updateSFMLEvents()
@@ -72,6 +66,7 @@ void Game::updateSFMLEvents()
         }
 
 }
+
 void Game::update()
 {
      //behind logic 
@@ -96,6 +91,7 @@ void Game::update()
      }
 
 }
+
 void Game::render()
 {
     /*
